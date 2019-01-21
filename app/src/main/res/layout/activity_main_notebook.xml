@@ -1,18 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivityNotebook">
+    tools:context=".MainActivityNotebook"
+    android:id="@+id/drawer_layout"
+    android:fitsSystemWindows="true"
+    android:background="#BDBDBD">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="vertical">
+        <include
+            layout ="@layout/toolbar_layout"/>
 
-</android.support.constraint.ConstraintLayout>
+        <Button
+            android:id="@+id/btn_add_course"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="2sp"
+            android:textSize="15sp"
+            android:text="@string/btn_add_course"
+            android:theme="@style/AddButton"
+            style="@style/Widget.AppCompat.Button.Borderless"/>
+        
+
+        <ImageView
+            android:id="@+id/main_background"
+            android:layout_width="100sp"
+            android:layout_height="170sp"
+            android:layout_marginTop="100sp"
+            android:layout_marginBottom="100sp"
+            android:src="@drawable/courses"
+            android:layout_gravity="center"
+            android:alpha="0.1"/>
+
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="@dimen/fab_margin"
+            android:src="@drawable/ic_loupe"/>
+
+
+    </LinearLayout>
+
+
+    <android.support.design.widget.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/navigationView"
+        android:layout_gravity="start"
+        app:menu="@menu/drawer_menu"
+        app:headerLayout="@layout/header_nav_layout"/>
+
+    <com.miguelcatalan.materialsearchview.MaterialSearchView
+        android:id="@+id/search_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/textColorPrimary"
+        android:textColorHint="@color/textColorPrimary"
+        app:searchBackground="@color/colorPrimary"
+        app:searchSuggestionBackground="@color/textColorPrimary"
+        app:searchCloseIcon="@drawable/ic_action_cancel"
+        app:searchBackIcon="@drawable/ic_arrow_back"
+        />
+
+</android.support.v4.widget.DrawerLayout>

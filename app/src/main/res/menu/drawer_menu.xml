@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_calendar"
+            android:icon="@drawable/ic_calendar"
+            android:title="Календар"/>
+        <item
+            android:id="@+id/nav_documents"
+            android:icon="@drawable/ic_documents"
+            android:title="Документи"/>
+        <item
+            android:id="@+id/nav_mon"
+            android:icon="@drawable/ic_mon"
+            android:title="МОН"/>
+        <item
+            android:id="@+id/nav_help"
+            android:icon="@drawable/ic_help"
+            android:title="Помощ"/>
+    </group>
+</menu>
