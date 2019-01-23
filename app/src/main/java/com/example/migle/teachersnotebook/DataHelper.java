@@ -8,9 +8,16 @@ import android.database.sqlite.SQLiteDatabaseCorruptException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.view.ContextMenu;
 
+import static android.os.Build.ID;
+import static java.sql.Types.NULL;
+import static java.sql.Types.VARCHAR;
+
 public class DataHelper extends SQLiteOpenHelper {
     private static  final String DATABASE_NAME = "gradebook.sqlite";
     private static  final int DATABASE_VERSION = 1;
+    public static final String TABLE_NAME = "Course";
+    public static final String COL_1 = "id";
+    public static final String COL_2 = "course_title";
 
     public  DataHelper(Context context){
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -18,17 +25,16 @@ public class DataHelper extends SQLiteOpenHelper {
 
     @Override
     public  void onCreate(SQLiteDatabase database){
-        database.execSQL("create table" + TABLE_NAME + "(ID INTEGER PRIMERY KEY NOT NULL, COURSE_TITLE VARCHAR NOT NULL  UNIQUE )");
+        database.execSQL("select * from " + TABLE_NAME);
     }
 
     @Override
     public  void onUpgrade(SQLiteDatabase database, int oldVersion, int newVersion){
-        database.execSQL("DROP TABLE IF EXISTS" + TABLE_NAME);
+        database.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         onCreate(database);
     }
 
-    @Override
-    public  boolean insertData(String title){
+     public  boolean insertData(String title){
         SQLiteDatabase database = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL_2, title);

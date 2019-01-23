@@ -66,6 +66,7 @@
         android:layout_height="wrap_content"
         android:textColor="@color/textColorPrimary"
         android:textColorHint="@color/textColorPrimary"
+        android:textHint="Търсене"
         app:searchBackground="@color/colorPrimary"
         app:searchSuggestionBackground="@color/textColorPrimary"
         app:searchCloseIcon="@drawable/ic_action_cancel"
