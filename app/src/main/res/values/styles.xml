@@ -4,7 +4,7 @@
 
     </style>
     <!-- Base application theme. -->
-    <style name="MyMaterialTheme.Base" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="MyMaterialTheme.Base" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -12,13 +12,13 @@
         <item name="colorButtonNormal">@color/addButton</item>
     </style>
 
-    <style name="AddButton" parent="Widget.AppCompat.Button.Borderless">
+    <style name="AddButton" parent="Widget.MaterialComponents.Button.TextButton">
         <!-- Customize your theme here. -->
         <item name="colorControlHighlight">@color/addButton</item>
     </style>
 
-    <style name="MyMaterialTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="MyMaterialTheme.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar" />
 
-    <style name="MyMaterialTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="MyMaterialTheme.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Light" />
 
 </resources>
